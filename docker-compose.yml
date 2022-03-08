@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres-compose:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/frota/Documentos/postgre_data:/var/lib/postgresql/data 
+    networks:
+      - compose-network
+    restart: always
+networks: 
+  compose-network:
+    driver: bridge
